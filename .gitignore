@@ -1,24 +1,35 @@
-# Compiled class file
-*.class
+}
+@keyframes migaj{
+  0%{opacity:1}
+  50%{opacity:0.2}
+  100%{opacity:1}
+}
+</style>
+</head>
+<body>
 
-# Log file
-*.log
+<div id="okno">
+<h1>Analiza systemu...</h1>
+<p id="status">Trwa skanowanie</p>
+<button onclick="start()">Uruchom test</button>
+</div>
 
-# BlueJ files
-*.ctxt
+<script>
+function start(){
+  document.getElementById("status").textContent = "Błąd krytyczny...";
+  document.body.classList.add("blink");
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+  setTimeout(()=>{
+    document.getElementById("status").textContent =
+      "Spokojnie 😄 To tylko żart. Naciśnij dowolny klawisz.";
+  },3000);
+}
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+document.addEventListener("keydown", ()=>{
+  document.body.classList.remove("blink");
+  document.getElementById("status").textContent = "System działa normalnie.";
+});
+</script>
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+</body>
+</html>
